@@ -1,0 +1,101 @@
+/* Stays-Core theme: the shared design tokens + base element styles for every
+   *stays site. Import after `@import "tailwindcss"`. Neutrals, text, semantic
+   colours, code-syntax colours, fonts and the soft elevation are identical across
+   the family. The ACCENT defaults to teal; a site with a different hue overrides
+   --color-accent / --color-accent-soft (and their light-mode values). */
+
+@theme {
+  /* neutral surfaces */
+  --color-bg: #0f1115;
+  --color-surface: #171a21;
+  --color-surface-2: #1c212b;
+  --color-border: #262b36;
+  --color-border-strong: #333b49;
+
+  /* text */
+  --color-text: #e6e9ef;
+  --color-muted: #8a93a3;
+  --color-faint: #646d7d;
+
+  /* accent (default teal — override per site) */
+  --color-accent: #5cc8b0;
+  --color-accent-soft: rgb(92 200 176 / 0.14);
+
+  /* semantic */
+  --color-error: #e5634d;
+  --color-error-soft: rgb(229 99 77 / 0.13);
+  --color-warn: #e0a33e;
+  --color-warn-soft: rgb(224 163 62 / 0.14);
+  --color-success: #4caf82;
+  --color-success-soft: rgb(76 175 130 / 0.13);
+  --color-add: #4caf82;
+  --color-del: #e5634d;
+
+  /* code / editor syntax */
+  --color-code-key: #cdd3df;
+  --color-code-str: #86c98e;
+  --color-code-num: #e0a33e;
+  --color-code-bool: #5cc8b0;
+  --color-code-punct: #717a8a;
+
+  /* type */
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* one soft elevation */
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.5), 0 14px 34px -18px rgb(0 0 0 / 0.7);
+}
+
+/* Light mode re-points the same tokens. */
+[data-theme="light"] {
+  --color-bg: #fbfbf9;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f5f0;
+  --color-border: #e7e6de;
+  --color-border-strong: #d6d5ca;
+
+  --color-text: #1a1d23;
+  --color-muted: #5f6672;
+  --color-faint: #9aa0ab;
+
+  --color-accent: #2f9e88;
+  --color-accent-soft: rgb(47 158 136 / 0.12);
+
+  --color-error-soft: rgb(196 61 48 / 0.09);
+  --color-warn-soft: rgb(154 106 0 / 0.10);
+  --color-success: #1f8a5b;
+  --color-success-soft: rgb(31 138 91 / 0.12);
+
+  --color-code-key: #1a1d23;
+  --color-code-str: #2f7d3a;
+  --color-code-num: #9a6a00;
+  --color-code-bool: #2f9e88;
+  --color-code-punct: #8a90a0;
+
+  --shadow-soft: 0 1px 2px rgb(20 20 30 / 0.05), 0 16px 34px -20px rgb(20 20 40 / 0.2);
+}
+
+/* base */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
