@@ -1,7 +1,9 @@
 {
   "name": "stays-core",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Shared theme and layout for the *stays family of sites (React + vanilla).",
+  "license": "UNLICENSED",
+  "private": true,
   "type": "module",
   "files": ["dist", "theme.css"],
   "main": "./dist/index.js",
