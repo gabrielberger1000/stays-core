@@ -1,7 +1,9 @@
 {
   "name": "stays-core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Shared theme and layout components for the *stays family of sites.",
+  "license": "UNLICENSED",
+  "private": true,
   "type": "module",
   "files": ["dist", "theme.css"],
   "main": "./dist/index.js",
